@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline">
+
+        <LinearLayout
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/chromecast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/share_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <androidx.mediarouter.app.MediaRouteButton
+                android:id="@+id/chromecast_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="9dp" />
+
+            <TextView
+                android:id="@+id/chromecast_text"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:text="@string/chromecast_connect"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/kebab_share"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/mute"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chromecast"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <ImageView
+                android:id="@+id/kebab_share_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="9dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_kebab_share" />
+
+            <TextView
+                android:id="@+id/kebab_share_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:text="Share"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mute"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kebab_share"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <ImageView
+                android:id="@+id/mute_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="9dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_mute" />
+
+            <TextView
+                android:id="@+id/mute_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:text="Mute"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/closed_caption"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mute"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <ImageView
+                android:id="@+id/closed_caption_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="9dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_cc_off" />
+
+            <TextView
+                android:id="@+id/closed_caption_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="32dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:text="Closed Caption"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#50000000"
+            app:layout_constraintBottom_toTopOf="@+id/cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mute" />
+
+        <LinearLayout
+            android:id="@+id/cancel"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="9dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_cancel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="37dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:text="Cancel"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

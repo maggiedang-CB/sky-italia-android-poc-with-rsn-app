@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shadow"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/chromecast_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:src="@drawable/chromecast_icon" />
+
+    <ImageView
+        android:id="@+id/chromecast_play_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_player_play"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/chromecast_pause_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_player_pause"
+        android:layout_gravity="center" />
+
+    <ImageButton
+        android:id="@+id/chromecast_kebab"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerInside"
+        android:layout_gravity="left|center"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_kebab" />
+
+</FrameLayout>

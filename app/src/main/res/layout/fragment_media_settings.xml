@@ -1,0 +1,150 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_nested_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/black"
+    android:fillViewport="true"
+    tools:context="com.nbcsports.regional.nbc_rsn.settings.media_settings.MediaSettingsFragment">
+
+    <LinearLayout
+        android:id="@+id/root_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp">
+
+            <ImageView
+                android:id="@+id/back_image_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/guideline_v02"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/exit_image_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_exit_button"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                app:layout_constraintRight_toRightOf="@+id/guideline_v98"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_v02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.02"
+                android:orientation="vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_v98"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.98"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="21dp"
+            android:src="@drawable/white"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0.5"/>
+
+        <TextView
+            android:id="@+id/media_settings_header_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="52sp"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:fontFamily="@font/publico_headline_black"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+            android:id="@+id/cellular_data_for_live_stream_heading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            app:headingTextAlpha="0.5"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/cellular_data_for_live_stream_actionable_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:actionableToggleButtonEnabled="true"/>
+
+        <TextView
+            android:id="@+id/allow_cellular_data_for_live_stream_message_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:fontFamily="@font/founders_grotesk_app_regular"
+            android:alpha="0.5"
+            android:layout_marginTop="9.5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/auto_play_live_games_actionable_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:actionableToggleButtonEnabled="true"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+            android:id="@+id/cellular_data_for_media_steam_heading_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50.5dp"
+            app:headingTextAlpha="0.5"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/cellular_data_for_media_steam_actionable_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:actionableToggleButtonEnabled="true"/>
+
+        <TextView
+            android:id="@+id/allow_cellular_data_for_media_steam_message_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:fontFamily="@font/founders_grotesk_app_regular"
+            android:alpha="0.5"
+            android:layout_marginTop="9.5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"/>
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/auto_play_videos_actionable_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:actionableToggleButtonEnabled="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100.5dp"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/topSeparatorLineInEditorial"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3"
+        app:layout_constraintStart_toStartOf="@id/guideline_0.060"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/topSpace"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/topSeparatorLineInEditorial" />
+
+    <View
+        android:id="@+id/firstFeedCardBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/topic_tag_background_layer_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/firstFeedCardBackgroundExtra"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="@id/guideline6"
+        app:layout_constraintEnd_toStartOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstFeedCardBackground" />
+
+    <LinearLayout
+        android:id="@+id/topic_tag_background_layer_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toBottomOf="@id/topSpace">
+
+        <TextView
+            android:id="@+id/topic_tag_background_layer"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="14sp"
+            android:text="                        "
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="                        " />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topic_tag_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_vertical"
+
+        app:layout_constraintStart_toStartOf="@id/guideline_thefeeds_items"
+        app:layout_constraintTop_toBottomOf="@id/topSpace">
+
+        <TextView
+            android:id="@+id/topic_tag_text"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            android:gravity="bottom"
+            android:lineSpacingExtra="14sp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="14sp"
+            tools:text="PLAYER UPDATE" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/upnext_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/founders_grotesk_app_regular"
+        android:rotation="270"
+        android:text="@string/upnext_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/author_and_publish_time"
+        app:layout_constraintEnd_toStartOf="@id/guideline_thefeeds_items"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topic_tag_container"
+        app:layout_constraintVertical_bias="0"
+        tools:visibility="visible" />
+
+    <!-- Waiting for NBC to approve the new styling for team view-->
+    <TextView
+        android:id="@+id/title_editorial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/founders_grotesk_app_semibold"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="-10sp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3"
+        app:layout_constraintStart_toStartOf="@id/guideline_thefeeds_items"
+        app:layout_constraintTop_toBottomOf="@id/topic_tag_container"
+        tools:text="Eagles sign Timmy Jernigan to 4-year, $48M extension" />
+
+    <View
+        android:id="@+id/title_editorial_indicator"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/title_editorial"
+        app:layout_constraintStart_toEndOf="@id/title_editorial"
+        app:layout_constraintTop_toTopOf="@id/title_editorial" />
+    <!--Below are the approach making it same to other feed title-->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/founders_grotesk_condensed_app__medium"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="1sp"
+        android:paddingEnd="10dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3"
+        app:layout_constraintStart_toStartOf="@id/guideline_thefeeds_items"
+        app:layout_constraintTop_toBottomOf="@id/topic_tag_container"
+        tools:text="Eagles sign Timmy Jernigan to 4-year, $48M extension" />
+
+    <View
+        android:id="@+id/title_indicator"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        app:layout_constraintStart_toEndOf="@id/title"
+        app:layout_constraintTop_toTopOf="@id/title" />
+
+    <TextView
+        android:id="@+id/author_and_publish_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:lineSpacingExtra="9sp"
+        android:maxLines="2"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v3_3"
+        app:layout_constraintStart_toStartOf="@id/guideline_thefeeds_items"
+        app:layout_constraintTop_toBottomOf="@id/title_bottom_barrier"
+        tools:text="Ray Ratto / 3 hrs ago" />
+
+    <View
+        android:id="@+id/bottomSeparatorLineInEditorial"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/darker_gray"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3"
+        app:layout_constraintStart_toStartOf="@id/guideline_0.060"
+        app:layout_constraintTop_toBottomOf="@id/author_and_publish_time"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/title_bottom_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="title,title_editorial" />
+
+    <View
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomSeparatorLineInEditorial" />
+
+    <!-- This would be an alternative Author/Publish_time implementation.
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        >
+        <TextView
+            android:id="@authorReferencethor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="9sp"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text=""
+            tools:text="Ray Ratto / 3 hrs ago"
+            />
+        <TextView
+            android:id="@+id/delimiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="9sp"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="authorReferencethor"
+            android:text=" / "
+            />
+        <TextView
+            android:id="@+id/publish_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            android:lineSpacingExtra="9sp"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/delimiter"
+            android:text=""
+            />
+    </android.support.constraint.ConstraintLayout>
+    -->
+
+    <include layout="@layout/teamview_card_constraint_guidelines" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineh17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

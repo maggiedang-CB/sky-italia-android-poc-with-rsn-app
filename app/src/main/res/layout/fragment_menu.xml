@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        tools:text="1.0.500101" />
+
+    <View
+        android:id="@+id/white_filter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white" />
+
+    <com.nbcsports.regional.nbc_rsn.fabigation.FabMenuRecyclerView
+        android:id="@+id/team_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="5"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/team_list_item">
+
+    </com.nbcsports.regional.nbc_rsn.fabigation.FabMenuRecyclerView>
+
+    <include
+        android:id="@+id/first_launch_bg"
+        layout="@layout/card_linear_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transition_view_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.nbcsports.regional.nbc_rsn.fabigation.CloneView
+            android:id="@+id/transition_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:scaleX="1.6"
+            android:scaleY="1.6"
+            android:visibility="invisible"
+            app:cardElevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

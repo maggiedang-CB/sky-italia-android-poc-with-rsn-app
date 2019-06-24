@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="deeplink_applicationId">com.nbcsports.regional.dev</string>
+
+    <!-- Chromecast -->
+    <string name="chromecast_app_id">DEFACCE5</string>
+</resources>

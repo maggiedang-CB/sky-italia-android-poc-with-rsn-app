@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="2.5dp"
+    android:layout_marginBottom="2.5dp"
+    android:background="@color/deep_blue"
+    android:paddingStart="@dimen/datamenu_card_padding"
+    android:paddingTop="@dimen/datamenu_card_padding"
+    android:paddingEnd="@dimen/datamenu_card_padding"
+    android:paddingBottom="@dimen/datamenu_card_padding_bottom">
+
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/foundersgrotesk_regular"
+        android:lineSpacingExtra="6sp"
+        android:paddingBottom="22dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="East" />
+
+    <TextView
+        android:id="@+id/longest_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/DataMenuScorePlayerName"
+        tools:text="m_morandini"/>
+
+    <TextView
+        android:id="@+id/invisible_column_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:paddingTop="@dimen/datamenu_score_text_padding_vertical"
+        android:paddingBottom="@dimen/datamenu_score_text_padding_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_title"
+        android:textAppearance="@style/DataMenuScoreColumnHeader"
+        tools:text="TD"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_player_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/invisible_column_header"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/view_holder_data_menu_player_name"
+        tools:itemCount="4"/>
+
+    <!--wrap_content doesn't work well when the layout also has constraints
+    on the same direction. Wrapping it in a FrameLayout solves the problem.-->
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/card_title"
+        app:layout_constraintBottom_toBottomOf="@id/list_player_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/longest_name">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            tools:listitem="@layout/view_holder_data_menu_score_stats"/>
+
+    </FrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/data_menu_item_carousel_root_constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.nbcsports.regional.nbc_rsn.common.VelocityWrapContentHeightViewPager
+        android:id="@+id/data_menu_item_carousel_main_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- It has been moved from: teamview_card_type_video.xml -->
+
+    <LinearLayout
+        android:id="@+id/date1_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/white_block"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v1"
+        android:visibility="visible">
+
+        <!--android:visibility="invisible"      done programmatically -->
+
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="320dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="45dp"
+            android:rotation="90"
+            android:text=""
+            android:fontFamily="@font/founders_grotesk_app_regular"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="May 25, 2018"
+            tools:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rsn_name"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        app:layout_constraintEnd_toEndOf="@id/rsn_bar"
+        android:visibility="visible">
+
+        <!--android:visibility="gone"       done programmatically-->
+        
+        <ImageView
+            android:id = "@+id/vertical_grey_bar_left"
+            android:layout_width="1dp"
+            android:layout_height="14dp"
+            android:background="@color/light_silver" />
+        
+        <TextView
+            android:id="@+id/region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="12sp"
+            android:fontFamily="@font/founders_grotesk_mono_app_regular"
+            android:textAllCaps="true"
+            android:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id = "@+id/rsn_bar"
+        android:layout_width="13dp"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id = "@+id/vertical_grey_bar_right"
+            android:layout_width="1dp"
+            android:layout_height="14dp"
+            android:background="@color/light_silver" />
+
+    </LinearLayout>
+
+</merge>

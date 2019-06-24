@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:paddingBottom="8dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_shadow_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_record_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.191" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_record_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.809" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/deep_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black15"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_medium"
+        android:text="@string/at"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/schedule_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom"
+        tools:text="NOV 15\n7PM NBC\nTBD" />
+
+    <TextView
+        android:id="@+id/city_name_away"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_medium"
+        android:paddingStart="@dimen/datamenu_item_horizontal_padding"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="NE" />
+
+    <TextView
+        android:id="@+id/record_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_medium"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintStart_toStartOf="@id/guide_record_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.164"
+        tools:text="12-5" />
+
+    <TextView
+        android:id="@+id/record_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_medium"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guide_record_end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.164"
+        tools:text="9-6" />
+
+    <TextView
+        android:id="@+id/city_name_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_medium"
+        android:paddingEnd="@dimen/datamenu_item_horizontal_padding"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_shadow_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="PHI" />
+
+    <ImageView
+        android:id="@+id/team_logo_away"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="@dimen/datamenu_item_horizontal_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom"
+        tools:src="@drawable/peacock" />
+
+    <ImageView
+        android:id="@+id/team_logo_home"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="@dimen/datamenu_item_horizontal_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom"
+        tools:src="@drawable/peacock" />
+
+
+    <TextView
+        android:id="@+id/game_point_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_record_start"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom"
+        app:layout_constraintWidth_percent="0.164"
+        tools:text="21" />
+
+    <TextView
+        android:id="@+id/game_point_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guide_record_end"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom"
+        app:layout_constraintWidth_percent="0.164"
+        tools:text="10" />
+
+    <ImageView
+        android:id="@+id/game_point_arrow_away"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_left"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/game_point_away"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom" />
+
+    <ImageView
+        android:id="@+id/game_point_arrow_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_right"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/game_point_home"
+        app:layout_constraintTop_toTopOf="@id/guide_shadow_bottom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

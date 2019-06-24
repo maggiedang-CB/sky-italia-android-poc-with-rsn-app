@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_of_viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Note, the EdgeSwipeViewPager's android:layout_height here is a placeholder only.
+        The real android:layout_height is adjusted dynamically, as per device size.
+    -->
+    <com.nbcsports.regional.nbc_rsn.common.EdgeSwipeViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

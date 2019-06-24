@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/debug_login_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/debug_prompt_enter_the_password"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/debug_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:singleLine="true"
+        android:hint="@string/debug_pass_word_here"
+        app:layout_constraintTop_toBottomOf="@id/debug_login_prompt"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/debug_submit_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:text="OK"
+        android:background="@color/black50"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debug_password" />
+
+    <Button
+        android:id="@+id/debug_cancel_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Cancel"
+        android:background="@color/black50"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/debug_submit_password"
+        app:layout_constraintTop_toBottomOf="@+id/debug_password" />
+</androidx.constraintlayout.widget.ConstraintLayout>

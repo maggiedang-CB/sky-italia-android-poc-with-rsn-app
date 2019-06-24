@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:paddingTop="10dp"
+    android:paddingBottom="30dp">
+
+    <FrameLayout
+        android:id="@+id/peacock_image_view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/f1_standard_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/rectangle_6_copy_7"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+        <com.nbcsports.regional.nbc_rsn.team_view.PeacockImageView
+            android:id="@+id/f1_standard_video_artwork"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tag_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="highlight"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:rotation="270"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/peacock_image_view_container"
+        app:layout_constraintTop_toTopOf="@id/peacock_image_view_container"
+        app:layout_constraintBottom_toBottomOf="@id/peacock_image_view_container" />
+
+    <View
+        android:id="@+id/image_title_spacing"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.027"
+        app:layout_constraintTop_toBottomOf="@id/peacock_image_view_container"/>
+
+    <ImageView
+        android:id="@+id/title_vertical_bar"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.05"
+        android:background="@color/white50"
+        android:baselineAlignBottom="true"
+        tools:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/peacock_image_view_container"/>
+
+    <ImageView
+        android:id="@+id/title_icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_play"
+        app:layout_constraintStart_toEndOf="@id/title_vertical_bar"
+        tools:visibility="gone"
+        android:baselineAlignBottom="true"
+        app:layout_constraintBaseline_toBaselineOf="@id/title" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_condensed_app__medium"
+        android:lineSpacingExtra="1sp"
+        android:paddingEnd="10dp"
+        android:paddingStart="@dimen/teamview_card_f2_title_padding_start"
+        app:layout_goneMarginStart="11dp"
+        tools:text="Eagles sign Timmy Jernigan to 4-year, $48M extension"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3"
+        app:layout_constraintStart_toEndOf="@id/title_icon"
+        app:layout_constraintTop_toBottomOf="@id/image_title_spacing" />
+
+    <TextView
+        android:id="@+id/duration_or_tag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v3_3"
+        android:layout_marginTop="12dp"
+        android:paddingStart="@dimen/teamview_card_f2_title_padding_start"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingExtra="9sp"
+        tools:text="54:23"
+        android:textColor="@color/white50"
+        android:textSize="14sp" />
+
+    <include layout="@layout/teamview_card_constraint_guidelines"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

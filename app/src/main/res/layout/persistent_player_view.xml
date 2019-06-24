@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_player_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        app:hide_on_touch="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:show_timeout="0"
+        app:surface_type="texture_view" />
+
+    <FrameLayout
+        android:id="@+id/primetime_player_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/exo_controller"
+            layout="@layout/exo_playback_control_view" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/sign_in_to_watch_overlay_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:background="@color/black"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/rectangle_7_copy_16_9_copy" />
+
+    <include layout="@layout/chromecast_layer_layout"
+        android:id="@+id/chromecast_connected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <com.nbcsports.regional.nbc_rsn.persistentplayer.view.temppass.CountDownContainer
+        android:id="@+id/temp_pass_countdown_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_black"
+        android:visibility="gone"
+        android:animateLayoutChanges="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/temp_pass_expired_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_black_2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/sign_in_to_watch_close"
+            android:background="@null"
+            android:layout_width="@dimen/persistent_player_icon_size"
+            android:layout_height="@dimen/persistent_player_icon_size"
+            android:src="@drawable/ic_exit_button"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@id/guideline_v4"
+            app:layout_constraintTop_toTopOf="@id/guideline_h5"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/preview_has_ended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/publico_headline_black"
+            android:lineSpacingExtra="12sp"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toTopOf="@+id/continue_watching"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/continue_watching"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:fontFamily="@font/foundersgrotesk_regular"
+            android:lineSpacingExtra="5sp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/expired_button"
+            app:layout_constraintEnd_toEndOf="@+id/preview_has_ended"
+            app:layout_constraintStart_toStartOf="@id/preview_has_ended"
+            app:layout_constraintTop_toBottomOf="@id/preview_has_ended"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/expired_button"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/sign_in_button_landscape_view"
+            android:layout_marginTop="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/continue_watching" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/standalone_play_button"
+        style="@style/ExoMediaButton.Play"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_player_play"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nbcsports.regional.nbc_rsn.persistentplayer.view.PersistentPlayerProgressBar
+        android:id="@+id/persistent_player_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.nbcsports.regional.nbc_rsn.persistentplayer.switchscreen.SwitchScreenView
+        android:id="@+id/video_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        tools:visibility="gone" />
+
+</merge>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.clearbridge.pull_to_refresh.ExitLayout
+        android:id="@+id/item_list"
+        android:name="com.nbcsports.regional.nbc_rsn.editorial_detail.BasicArticleTemplateFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collapsed_header_state"
+        app:pull_iconHeightPercent="0.1"
+        app:pull_maxPullHeightPercent="0.15"
+        app:pull_pullToCompletionThresholdPercent="0.12"
+        tools:context="com.nbcsports.regional.nbc_rsn.MainActivity"
+        tools:listitem="@layout/component_hero_image" />
+
+    <include layout="@layout/collapsed_header_view" />
+
+    <LinearLayout
+        android:id="@+id/editorial_background_to_fade_to"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+</FrameLayout>

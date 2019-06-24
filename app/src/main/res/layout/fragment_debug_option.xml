@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:animateLayoutChanges="true"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/debug_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/debug_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:headingText="You are now in debugging mode" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/debug_state_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                    android:id="@+id/debug_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:actionableText="Current Configuration:"
+                    app:actionableUnderLineEnabled="false" />
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsDescriptionView
+                    android:id="@+id/debug_current_config_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/debug_state" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/debug_configuration_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                    android:id="@+id/debug_configuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:actionableText="Selected Configuration URL is:"
+                    app:actionableUnderLineEnabled="false" />
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsDescriptionView
+                    android:id="@+id/debug_configuration_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/debug_configuration" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/debug_reset_temp_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableText="Reset Temp Pass" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/debug_ua_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                    android:id="@+id/debug_copy_ua_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:actionableText="Copy Urban Airship Channel ID"
+                    app:actionableUnderLineEnabled="false" />
+
+                <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsDescriptionView
+                    android:id="@+id/debug_ua_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/debug_copy_ua_id" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/debug_data_bar_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableText="Disable Data Bar"
+                app:actionableToggleButtonEnabled="true" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/debug_data_menu_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableText="Disable Data Menu"
+                app:actionableToggleButtonEnabled="true" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

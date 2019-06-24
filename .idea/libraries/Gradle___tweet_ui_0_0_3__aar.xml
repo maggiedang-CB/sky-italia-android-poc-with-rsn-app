@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :tweet-ui-0.0.3:@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/4f477920a876eeaa3e8c12756930f882/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/4f477920a876eeaa3e8c12756930f882/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

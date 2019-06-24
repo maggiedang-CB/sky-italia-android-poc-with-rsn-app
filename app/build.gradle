@@ -1,0 +1,367 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.nbcsports.mobile.rsnlocalsports"
+        versionCode getCommitCount() + 5000000 as int
+        versionName "5.8"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("csnlocal.keystore")
+            storePassword "flyb0y"
+            keyAlias "csnlocal"
+            keyPassword "flyb0y"
+        }
+    }
+
+    // Specifying only one flavor dimension so far
+    flavorDimensions "env"
+    productFlavors {
+        create("dev") {
+            buildConfigField "String", 'CONFIG_URL', '"http://appstream-stage.nbcsports.com/apps/RSN/configuration-android.json"'
+
+            buildConfigField "String", 'ROTO_BASE_URL', '"https://api-dev.rotoworld-serverless.com/public/my-teams/"'
+            buildConfigField "String", 'ROTO_DEV_API_KEY', '"0OWrthCMsE57uUiMiQDh44Uocq7TdMp31Sqc9xvo"'
+            buildConfigField "String", 'ROTO_PROD_API_KEY', '"y0fAF1r59s4JQ7kDjxGqx2lGrcM1zxl75JaKI13v"'
+
+            buildConfigField "String", 'STATS_BASE_URL', '"https://api-dev.rotoworld-serverless.com/public/stats-api/v1/stats/"'
+            buildConfigField "String", 'STATS_DEV_API_KEY', '"0OWrthCMsE57uUiMiQDh44Uocq7TdMp31Sqc9xvo"'
+            buildConfigField "String", 'STATS_PROD_API_KEY', '"y0fAF1r59s4JQ7kDjxGqx2lGrcM1zxl75JaKI13v"'
+            buildConfigField "String", 'KOCHAVA_APP_ID', '"korsn-mobile-app-android-limyxsd"'
+            buildConfigField "String", 'COMSCORE_PUBLISHER_ID', '"6035083"'
+            buildConfigField "String", 'COMSCORE_PUBLISHER_SECRET', '"5f94da45f8b0635bdfd6c1ccd9df1227"'
+            buildConfigField "Boolean", 'IS_PROD', 'false'
+
+            dimension "env"
+            versionNameSuffix "-${getBranchName()}"
+            manifestPlaceholders = [fabricApiKey: "c5eb74895333af1a0b21d6cc274ce6d148e0fe8b"]
+            applicationIdSuffix = ".dev"
+        }
+        create("prod") {
+            buildConfigField "String", 'CONFIG_URL', '"http://stream.nbcsports.com/data/mobile/apps/RSN/configuration-android.json"'
+
+            buildConfigField "String", 'ROTO_BASE_URL', '"https://api.rotoworld.com/public/my-teams/"'
+            buildConfigField "String", 'ROTO_DEV_API_KEY', '"0OWrthCMsE57uUiMiQDh44Uocq7TdMp31Sqc9xvo"'
+            buildConfigField "String", 'ROTO_PROD_API_KEY', '"y0fAF1r59s4JQ7kDjxGqx2lGrcM1zxl75JaKI13v"'
+
+            buildConfigField "String", 'STATS_BASE_URL', '"https://api.rotoworld-serverless.com/public/stats-api/v1/stats/"'
+            buildConfigField "String", 'STATS_DEV_API_KEY', '"0OWrthCMsE57uUiMiQDh44Uocq7TdMp31Sqc9xvo"'
+            buildConfigField "String", 'STATS_PROD_API_KEY', '"y0fAF1r59s4JQ7kDjxGqx2lGrcM1zxl75JaKI13v"'
+            buildConfigField "String", 'KOCHAVA_APP_ID', '"korsn-mobile-app-android-limyxsd"'
+            buildConfigField "String", 'COMSCORE_PUBLISHER_ID', '"6035083"'
+            buildConfigField "String", 'COMSCORE_PUBLISHER_SECRET', '"5f94da45f8b0635bdfd6c1ccd9df1227"'
+            buildConfigField "Boolean", 'IS_PROD', 'true'
+            dimension "env"
+            manifestPlaceholders = [fabricApiKey: "4c2eaf364cc0619b1203476f0334eae7479f5b38"]
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix "debug"
+            minifyEnabled false
+            multiDexEnabled true
+            debuggable true
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            multiDexEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    applicationVariants.all { variant ->
+
+        // set apk file name
+        variant.outputs.each { output ->
+            def appTitle = "myteams"
+            def apkName = appTitle + "-" + versionName.replace('/', '-') + "-" + versionCode
+            output.outputFileName = new File(apkName + ".apk")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Fixes build error hitting GC overhead limit
+    dexOptions {
+        javaMaxHeapSize "2560M"
+    }
+
+    configurations {
+        ktlint
+    }
+
+    lintOptions {
+        quiet true
+    }
+
+    packagingOptions {
+        // rxBinding includes rxjava-1.2.3 for some reason
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    // UNCOMMENT BELOW IF YOU WISH TO TEST ON AN x86 EMULATOR - PLAYER WILL NOT WORK HOWEVER
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86'
+//            universalApk false
+//        }
+//    }
+}
+
+def supportLibVersion = '1.0.0'
+def multidexVersion = '2.0.1'
+def constraintlayoutVersion = '1.1.3'
+def lifecycleVersion = '2.0.0'
+def retrofitVersion = '2.3.0'
+def okhttpVersion = '3.9.0'
+def rxAndroidVersion = '2.1.1'
+def rxjavaVersion = '2.2.7'
+def rxbindingVersion = '2.1.1'
+def rxpreferencesVersion = '2.0.0'
+def butterknifeVersion = '10.0.0'
+
+def playServicesVersion = '15.0.1'
+def firebaseCoreVersion = '15.0.2'
+def firebaseMessagingVersion = '15.0.2'
+
+def picassoVersion = '2.71828'
+def blurryVersion = '2.1.1'
+def glideVersion = '4.9.0'
+
+def timberVersion = '4.7.0'
+
+def animationVersion = '1.0.0'
+def ktlintVersion = '0.19.0'
+def androidktxVersion = '1.0.1'
+def guavaVersion = '18.0'
+def exoplayerVersion = '2.7.3'
+def leakCanaryVersion = '1.5.4'
+def gsonVersion = '2.8.2'
+def jodaTimeVersion = '2.9.9'
+def lottieVersion = '2.5.6'
+def urbanAirshipFcmVersion = '9.5.6'
+
+def moshiVersion = '1.8.0'
+def ordinalNamingVersion = '53.1'
+
+def mediaRouterVersion = '1.0.0'
+
+def junitTestVersion = '4.12'
+
+def comScoreVersion = '5.+'
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(
+            // Support
+            "androidx.appcompat:appcompat:${supportLibVersion}",
+            "androidx.recyclerview:recyclerview:${supportLibVersion}",
+            "com.google.android.material:material:${supportLibVersion}",
+            "androidx.cardview:cardview:${supportLibVersion}",
+            "androidx.multidex:multidex:${multidexVersion}",
+            "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+
+            // Play Services
+            "com.google.android.gms:play-services-location:${playServicesVersion}",
+            "com.google.android.gms:play-services-ads:${playServicesVersion}",
+
+            // Architecture Components
+            "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+
+            // Firebase
+            "com.google.firebase:firebase-core:${firebaseCoreVersion}",
+            "com.google.firebase:firebase-messaging:${firebaseMessagingVersion}",
+
+            // Networking
+            "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+
+            // RxJava
+            "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            "io.reactivex.rxjava2:rxjava:${rxjavaVersion}",
+            "com.jakewharton.rxbinding2:rxbinding:${rxbindingVersion}",
+            "com.f2prateek.rx.preferences2:rx-preferences:${rxpreferencesVersion}",
+
+            // Butterknife
+            "com.jakewharton:butterknife:${butterknifeVersion}",
+
+            // Imaging
+            "com.squareup.picasso:picasso:${picassoVersion}",
+            "jp.wasabeef:blurry:${blurryVersion}",
+            "com.github.bumptech.glide:glide:${glideVersion}",
+
+            // Timber
+            "com.jakewharton.timber:timber:${timberVersion}",
+
+            // Animation
+            "androidx.dynamicanimation:dynamicanimation:${animationVersion}",
+
+            // Kotlin
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            "androidx.core:core-ktx:${androidktxVersion}",
+
+            // Guava
+            "com.google.guava:guava:${guavaVersion}",
+
+            // Exoplayer
+            "com.google.android.exoplayer:exoplayer:${exoplayerVersion}",
+            "com.google.android.exoplayer:exoplayer-hls:${exoplayerVersion}",
+
+            //Gson
+            "com.google.code.gson:gson:${gsonVersion}",
+
+            //Joda
+            "joda-time:joda-time:${jodaTimeVersion}",
+
+            // Apache Common
+            'org.apache.commons:commons-lang3:3.7',
+            'commons-codec:commons-codec:1.11',
+
+            //Airbnb - Lottie
+            "com.airbnb.android:lottie:${lottieVersion}",
+
+            //Urban airship
+            "com.urbanairship.android:urbanairship-fcm:${urbanAirshipFcmVersion}",
+
+            // Too large tool
+            'com.gu.android:toolargetool:0.1.3@aar',
+
+            // Chromecast
+            "androidx.mediarouter:mediarouter:${mediaRouterVersion}",
+            "com.google.android.gms:play-services-cast-framework:${playServicesVersion}",
+
+            // Retrofit
+            'com.squareup.retrofit:retrofit:1.9.0',
+            'com.jakewharton.retrofit:retrofit1-okhttp3-client:1.1.0',
+
+            // Moshi
+            "com.squareup.moshi:moshi:${moshiVersion}",
+            "com.squareup.moshi:moshi-kotlin:${moshiVersion}",
+
+            // Ordinal Naming Library
+            "com.ibm.icu:icu4j:${ordinalNamingVersion}",
+
+            // ComScore
+            "com.comscore:android-analytics:${comScoreVersion}"
+    )
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
+
+    ktlint "com.github.shyiko:ktlint:${ktlintVersion}"
+
+    implementation("com.crashlytics.sdk.android:crashlytics:2.9.1@aar") {
+        transitive = true
+    }
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor 'org.projectlombok:lombok:1.16.20'
+
+    implementation(name: 'notification-banner-0.1.6', ext: 'aar')
+    implementation(name: 'bottom-notification-banner-0.0.1', ext: 'aar')
+    implementation(name: 'pull-to-refresh-0.1.0', ext: 'aar')
+
+    implementation(name: 'twitter-core-0.0.3', ext: 'aar')
+    implementation(name: 'tweet-ui-0.0.3', ext: 'aar')
+
+    implementation project(':zoomy')
+
+    // IMA SDK for google ads
+    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.11.3'
+    implementation 'com.google.android.gms:play-services-ads-identifier:15.0.1'
+
+    // Architecture Components
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}"
+
+    // Test Implementation
+    debugImplementation (
+            "junit:junit:$junitTestVersion"
+    )
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    main = "com.github.shyiko.ktlint.Main"
+    classpath = configurations.ktlint
+    args "src/**/*.kt"
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    main = "com.github.shyiko.ktlint.Main"
+    classpath = configurations.ktlint
+    args "-F", "src/**/*.kt"
+}
+
+def getCommitCount() {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-list', 'HEAD', '--count'
+            standardOutput = stdout
+        }
+        return stdout.toString() as int
+    }
+    catch (ignored) {
+        return 0;
+    }
+}
+
+def getBranchName() {
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-parse', '--abbrev-ref', 'HEAD'
+            standardOutput = stdout
+        }
+        return stdout.toString().trim()
+    }
+    catch (ignored) {
+        return "";
+    }
+}
+
+// This is the bottom of the file, if there is anything needed to be added, please do it above this line
+apply plugin: 'com.google.gms.google-services'

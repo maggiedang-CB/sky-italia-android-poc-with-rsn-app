@@ -1,0 +1,180 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- <item name="colorPrimaryDark">@color/colorPrimaryDark</item> -->
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="LayoutGuideline.Horizontal">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="LayoutGuideline">LayoutGuideline</style>
+
+
+    <!-- FabMenu -->
+    <style name="fab_card" parent="CardView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">@dimen/menu_card_margin</item>
+        <item name="android:layout_marginStart">@dimen/menu_card_margin</item>
+        <item name="cardElevation">20dp</item>
+        <item name="cardCornerRadius">@dimen/fab_card_corner_radius</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="layout_anchorGravity">center</item>
+    </style>
+
+    <!-- Persistent Player -->
+    <style name="ExoMediaButton.HighlightBackward">
+        <item name="android:src">@drawable/ic_highlight_backward</item>
+        <item name="android:contentDescription">@string/persistent_highlight_backward</item>
+    </style>
+
+    <style name="ExoMediaButton.HighlightForward">
+        <item name="android:src">@drawable/ic_highlight_forward</item>
+        <item name="android:contentDescription">@string/persistent_highlight_forward</item>
+    </style>
+
+    <!-- DataBar -->
+    <style name="databar_top_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/foundersgroteskmono_medium</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/black50</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="databar_score">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/foundersgroteskmono_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="databar_logo">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">@dimen/fab_logo_max_size</item>
+        <item name="android:maxWidth">@dimen/fab_logo_max_size</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="databar_away_timeout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/databar_timeout_margin</item>
+        <item name="android:paddingEnd">@dimen/databar_timeout_margin</item>
+        <item name="android:src">@drawable/nfl_timeout</item>
+    </style>
+
+    <style name="databar_home_timeout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/databar_timeout_margin</item>
+        <item name="android:paddingStart">@dimen/databar_timeout_margin</item>
+        <item name="android:src">@drawable/nfl_timeout</item>
+    </style>
+
+    <style name="fab_card_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:alpha">0.35</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="InlineImageText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/foundersgrotesk_regular</item>
+        <item name="android:textColor">@color/silver</item>
+    </style>
+
+    <style name="stepped_story_text">
+        <item name="android:fontFamily">@font/publico_text_roman</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">36dp</item>
+        <item name="android:paddingBottom">36dp</item>
+        <item name="android:paddingEnd">5dp</item>
+    </style>
+
+    <style name="tab_selected">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/deep_blue</item>
+        <item name="android:fontFamily">@font/founders_grotesk_mono_app_regular</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingTop">22dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingBottom">22dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="tab_unselected">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/grey_2</item>
+        <item name="android:fontFamily">@font/founders_grotesk_mono_app_regular</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingTop">22dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingBottom">22dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white50</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="RosterPlayerSmallText">
+        <item name="android:fontFamily">@font/founders_grotesk_app_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:alpha">0.50</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="DataMenuScorePlayerName">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/foundersgrotesk_regular</item>
+        <item name="android:textColor">@color/white50</item>
+    </style>
+
+    <style name="DataMenuScoreStats">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/founders_grotesk_mono_app_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DataMenuScoreColumnHeader">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/founders_grotesk_mono_app_regular</item>
+        <item name="android:textColor">@color/white50</item>
+    </style>
+
+    <style name="DataMenuScoringSummaryColumnHeader">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/founders_grotesk_mono_app_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="num_teams">
+        <item quantity="one" formatted="true">%d TEAM</item>
+        <item quantity="other" formatted="true">%d TEAMS</item>
+    </plurals>
+    
+    <plurals name="num_outs">
+        <item quantity="zero" formatted="true">%d OUTS</item>
+        <item quantity="one" formatted="true">%d OUT</item>
+        <item quantity="other" formatted="true">%d OUTS</item>
+    </plurals>
+</resources>

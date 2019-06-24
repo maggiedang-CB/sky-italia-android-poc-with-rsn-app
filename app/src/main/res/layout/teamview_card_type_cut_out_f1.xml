@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/f1_standard_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- DO NOT CHANGE IDs: white_block, date1,rsn_name,region (included), f1_standard_player
+        because they are common IDs used to layout all types of cards.
+    -->
+    <ImageView
+        android:id="@+id/f1_standard_view_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/f1_standard_view_gradient"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_h50" />
+
+    <View
+        android:id="@+id/white_block"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintDimensionRatio="H,22:49"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Note: the ids: date1, rsn_name, region, are included from: teamview_card_type_base_date1_and_region.xml-->
+    <include layout="@layout/teamview_card_type_base_date1_and_region" />
+
+    <View
+        android:id="@+id/cut_out_block"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,18:13"
+        app:layout_constraintTop_toBottomOf="@id/rsn_name"
+        app:layout_constraintStart_toEndOf="@id/guideline_v1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/cut_out_block"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="15dp"/>
+
+    <com.nbcsports.regional.nbc_rsn.team_view.PeacockImageView
+        android:id="@+id/f1_standard_video_artwork"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="H,25:28"
+        app:scaleType="centerInside"
+        android:animateLayoutChanges="true" />
+
+    <ImageView
+        android:id="@+id/topic_tag_icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/cut_out_block"
+        app:layout_constraintStart_toStartOf="@id/cut_out_block"
+        tools:visibility="visible"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="9dp"
+        android:visibility="gone"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_play" />
+
+    <TextView
+        android:id="@+id/topic_tag_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="14sp"
+        tools:text="TOPIC TAG"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toEndOf="@id/topic_tag_icon"
+        app:layout_constraintBottom_toBottomOf="@id/cut_out_block"
+        app:layout_goneMarginStart="9dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="8dp" />
+
+    <!--
+    Note, for the title TextView, it's important to have the layout_height, set to:
+        android:layout_height="wrap_content"
+    and not to:
+        android:layout_height="match_parent"
+    else a last line, if it happens to contain a single (last) word of title text, may be truncated.
+    For example,
+    with android:layout_height="match_parent",
+    the title of the fist card of team Celtics (http://appstream-stage.nbcsports.com/apps/RSN/feeds/team-view-boston-celtics.json)
+    which reads:
+        "NBC Sports Boston Breakfast Pod"
+    is rendered with the last word "Pod" truncated:
+        "NBC Sports Boston Breakfast"
+    in cases when the "Pod" is to be laid out into a last line.
+    -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:breakStrategy="simple"
+        android:fontFamily="@font/founders_grotesk_app_semibold"
+        android:lineSpacingExtra="-15sp"
+        android:textColor="@color/white"
+        android:textSize="52sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cut_out_block"
+        tools:text="Allen's tweets are evidence he was recently a teen" />
+
+    <!--
+        Remade 'duration_indicator_layout' and 'duration_indicator_bar',
+        because sometimes the 'duration_indicator_bar' was placed above the 'duration_indicator_layout'
+        (it seems, because 'duration_indicator_bar' used: app:layout_constraintBottom_toBottomOf="parent")
+    -->
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        android:drawableStart="@drawable/ic_clock"
+        android:drawablePadding="4dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:lineSpacingExtra="5sp"
+        tools:text="54:23"
+        android:textColor="@color/white50"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/duration_indicator_bar"
+        android:layout_width="86dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        app:layout_constraintTop_toBottomOf="@id/duration"/>
+
+    <!--This view exists in order to maintain the same card height even when duration is gone.
+    Visually it will look like the indicator bar has a dynamic bottom spacing.-->
+    <TextView
+        android:id="@+id/invisible_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/duration_indicator_bar"
+        app:layout_constraintStart_toStartOf="@id/duration_indicator_bar"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:text="0"
+        android:textColor="#00ffffff"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/bottom_padding"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/invisible_duration"/>
+
+    <include layout="@layout/teamview_card_constraint_guidelines" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

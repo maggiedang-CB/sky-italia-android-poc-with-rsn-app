@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "979353246654",
+    "firebase_url": "https://rsn-app-17fb4.firebaseio.com",
+    "project_id": "rsn-app-17fb4",
+    "storage_bucket": "rsn-app-17fb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979353246654:android:8732622fdd20689c",
+        "android_client_info": {
+          "package_name": "com.nbcsports.mobile.rsnlocalsports.dev.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJFEDzRldqdJ9ptz5g_Sm0668IC-I13U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979353246654:android:8732622fdd20689c",
+        "android_client_info": {
+          "package_name": "com.nbcsports.mobile.rsnlocalsports.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJFEDzRldqdJ9ptz5g_Sm0668IC-I13U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979353246654:android:8732622fdd20689c",
+        "android_client_info": {
+          "package_name": "com.nbcsports.mobile.rsnlocalsports.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJFEDzRldqdJ9ptz5g_Sm0668IC-I13U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979353246654:android:8732622fdd20689c",
+        "android_client_info": {
+          "package_name": "com.nbcsports.mobile.rsnlocalsports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzJFEDzRldqdJ9ptz5g_Sm0668IC-I13U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979353246654-q5vc5rehjn2cc2kvmklvo6ci63983i0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

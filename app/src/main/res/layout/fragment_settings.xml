@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/black">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/settings_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeaderView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/my_teams_settings_heading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:headingTextAlpha="0.65" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/setting_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsToggleTeamsView
+                android:id="@+id/toggle_teams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/edit_reorder_teams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/notification_settings_heading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                app:headingTextAlpha="0.65" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/allow_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableToggleButtonEnabled="true" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/breaking_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:actionableToggleButtonEnabled="true" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/team_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/data_settings_heading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                app:headingTextAlpha="0.65" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/media_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="100dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/rtl_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:alpha="0.66"
+                    android:text="Set Right-to-Left Mode"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_rtl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:checked="false" />
+
+            </RelativeLayout>
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                app:headingTextAlpha="0.65" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:functionIcon="@drawable/ic_support_redirect" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_update_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableSubTextEnabled="true"
+                app:functionIcon="@drawable/ic_support_redirect" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:functionIcon="@drawable/ic_support_redirect" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:functionIcon="@drawable/ic_support_redirect" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_term_of_use"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:functionIcon="@drawable/ic_support_redirect" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/support_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:functionIcon="@drawable/ic_support_share" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsHeadingView
+                android:id="@+id/provider_settings_heading_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54dp"
+                app:headingText="@string/settings_provider"
+                app:headingTextAlpha="0.65" />
+
+            <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:actionableUnderLineEnabled="false"/>
+
+            <TextView
+                android:id="@+id/settings_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:alpha="0.5"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/black" />
+</androidx.constraintlayout.widget.ConstraintLayout>

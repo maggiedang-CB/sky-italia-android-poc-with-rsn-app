@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/team_info"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingBottom="4dp">
+
+        <View
+            android:id="@+id/background_color"
+            android:background="@color/deep_blue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_v03"
+            app:layout_constraintRight_toRightOf="@+id/guideline_v97"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/team_logo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_v09"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/team_name"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_v24"
+            app:layout_constraintTop_toTopOf="@+id/guideline_h2"
+            />
+
+        <TextView
+            android:id="@+id/team_city"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:alpha="0.5"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline_v24"
+            app:layout_constraintTop_toTopOf="@+id/guideline_h55"/>
+
+        <ImageView
+            android:id="@+id/open_options_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="14dp"
+            android:src="@drawable/ic_team_news_filter_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@id/guideline_v95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.09"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.24"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v97"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_h55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.55"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/all_option"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            app:actionableTextColor="#FFFFFF"
+            app:actionableToggleButtonEnabled="true"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_v04"
+            app:layout_constraintRight_toRightOf="@id/guideline_v96"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/team_news_option"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:actionableTextColor="#FFFFFF"
+            app:actionableToggleButtonEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/all_option"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_v04"
+            app:layout_constraintRight_toRightOf="@id/guideline_v96"
+            />
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/game_start_option"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:actionableTextColor="#FFFFFF"
+            app:actionableToggleButtonEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/team_news_option"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_v04"
+            app:layout_constraintRight_toRightOf="@id/guideline_v96"
+            />
+
+        <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsActionableView
+            android:id="@+id/final_score_option"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:paddingBottom="10dp"
+            app:actionableTextColor="#FFFFFF"
+            app:actionableToggleButtonEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/game_start_option"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_v04"
+            app:layout_constraintRight_toRightOf="@id/guideline_v96"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_v96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

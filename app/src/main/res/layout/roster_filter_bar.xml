@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/spinner_container"
+    android:layout_width="match_parent"
+    android:layout_height="59dp"
+    android:background="@color/dark_grey_1">
+
+    <View
+        android:id="@+id/roster_filter_bar_bg"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/dark_grey_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/team_logo"
+        android:layout_width="@dimen/fab_logo_max_size"
+        android:layout_height="@dimen/fab_logo_max_size"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="@dimen/datamenu_item_horizontal_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Spinner
+        android:id= "@+id/sort_option_selector"
+        android:spinnerMode="dropdown"
+        android:backgroundTint="@color/light_grey_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/datamenu_item_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/roster_filter_bar_bg"
+        app:layout_constraintBottom_toBottomOf="@id/roster_filter_bar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/team_logo"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

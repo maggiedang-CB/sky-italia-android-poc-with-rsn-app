@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.urbanairship.android:urbanairship-fcm:9.5.6@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/6385d4a1fe40da3d72f8b6982fccfee3/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/6385d4a1fe40da3d72f8b6982fccfee3/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

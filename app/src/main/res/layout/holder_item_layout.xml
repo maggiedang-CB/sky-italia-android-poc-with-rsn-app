@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="350dp">
+
+    <FrameLayout
+        android:id="@+id/ss_media_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.nbcsports.regional.nbc_rsn.team_view.PeacockImageView
+            android:id="@+id/ss_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:visibility="invisible" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/ss_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+        <View
+            android:id="@+id/ss_image_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#c0000000" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/guide_title_wrapper_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/ss_media_container"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_media_container"
+        app:layout_constraintVertical_bias="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_content_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.119" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ss_title_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guide_title_wrapper_start">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_divider_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.047" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_title_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.119" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ss_section_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/foundersgroteskmono_regular"
+            android:lineSpacingExtra="14sp"
+            android:paddingBottom="3dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/guide_title_start"
+            tools:text="01" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ss_section_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/foundersgroteskmono_regular"
+            android:lineSpacingExtra="16sp"
+            android:text=""
+            android:textColor="@color/white50"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/ss_section_num"
+            app:layout_constraintStart_toEndOf="@id/ss_section_num"
+            tools:text="/05" />
+
+        <View
+            android:id="@+id/ss_line"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/white25"
+            app:layout_constraintBottom_toBottomOf="@id/ss_title"
+            app:layout_constraintStart_toStartOf="@id/guide_divider_start"
+            app:layout_constraintTop_toTopOf="@id/ss_section_num" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ss_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/foundersgrotesk_medium"
+            android:gravity="left"
+            android:letterSpacing="-0.01"
+            android:lineSpacingExtra="5sp"
+            android:paddingTop="3dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_title_start"
+            app:layout_constraintTop_toBottomOf="@id/ss_section_num"
+            tools:text="Title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ss_section_num_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@android:color/holo_green_light"
+        android:fontFamily="@font/foundersgroteskmono_regular"
+        android:paddingBottom="3dp"
+        android:text="01"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/guide_content_start"
+        app:layout_constraintTop_toBottomOf="@id/ss_media_container" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ss_title_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/foundersgrotesk_medium"
+        android:gravity="left"
+        android:letterSpacing="-0.01"
+        android:lineSpacingExtra="2sp"
+        android:paddingTop="3dp"
+        android:text="Title Placeholder"
+        android:textSize="34sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/ss_section_num_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/ss_section_num_placeholder" />
+
+    <com.nbcsports.regional.nbc_rsn.stepped_story.template.SteppedStoryCustomTextView
+        android:id="@+id/ss_text"
+        style="@style/stepped_story_text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_content_start"
+        app:layout_constraintTop_toBottomOf="@id/ss_title_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleProgressBar">
+        <attr name="progressMin" format="integer" />
+        <attr name="progressMax" format="integer" />
+        <attr name="progress" format="float" />
+        <attr name="progressBarForegroundColor" format="color" />
+        <attr name="progressBarBackgroundColor" format="color" />
+        <attr name="progressBarThickness" format="dimension" />
+        <attr name="progressBarForegroundStrokeCap" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+        <attr name="progressBarProgressAnimationDuration" format="float" />
+    </declare-styleable>
+</resources>

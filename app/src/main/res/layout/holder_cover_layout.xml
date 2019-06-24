@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/ss_item_cover_media_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.nbcsports.regional.nbc_rsn.team_view.PeacockImageView
+            android:id="@+id/ss_item_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:visibility="visible" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/ss_item_cover_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_content_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.119" />
+
+    <com.nbcsports.regional.nbc_rsn.stepped_story.template.SteppedStoryCustomTextView
+        android:id="@+id/ss_item_first_text"
+        style="@style/stepped_story_text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide_content_start"
+        app:layout_constraintTop_toBottomOf="@id/ss_item_cover_media_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

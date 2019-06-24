@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/f1_standard_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- DO NOT CHANGE IDs: white_block, date1,rsn_name,region (included), f1_standard_player
+        because they are common IDs used to layout all types of cards.
+    -->
+    <ImageView
+        android:id="@+id/f1_standard_view_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/f1_standard_view_gradient"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_h50" />
+
+    <View
+        android:id="@+id/white_block"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Note: the ids: date1, rsn_name, region, are included from: teamview_card_type_base_date1_and_region.xml-->
+    <include layout="@layout/teamview_card_type_base_date1_and_region" />
+
+    <FrameLayout
+        android:id="@+id/media_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        app:layout_constraintTop_toBottomOf="@id/rsn_name">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/f1_standard_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/rectangle_6_copy_7"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+        <com.nbcsports.regional.nbc_rsn.team_view.PeacockImageView
+            android:id="@+id/f1_standard_video_artwork"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/description_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_v1"
+        app:layout_constraintTop_toBottomOf="@id/media_container">
+
+        <!--
+        RSNAPP-237 & Adriana Madden: "the last line of the description copy was always 65px from the end of the description box."
+        RSNAPP-74 & Annotations-Sprint1: "F1 Standard Image - Description - Height of the container flexes as per text amount."
+        Note, the android:background is to be set programmatically, to the team primary color, blended with black-partially-opaque.
+        -->
+        <LinearLayout
+            android:id="@+id/description_container_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp"
+            android:paddingRight="12dp"
+            android:paddingTop="25dp"
+            android:paddingBottom="65dp"
+            tools:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/playhead_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_play" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/founders_grotesk_app_regular"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="5sp"
+                android:text="Episode 8: The Eagles addressed concerns about playing so many night games on the road."
+                android:textColor="@color/light_grey"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.legacy.widget.Space
+        android:id="@+id/marginSpacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/description_container"
+        app:layout_constraintLeft_toLeftOf="@id/description_container"
+        app:layout_constraintRight_toRightOf="@id/description_container" />
+
+    <!--
+    RSNAPP-237 & RSNAPP-74 test-start
+    <View
+        android:id="@+id/measure_65px_from_the_end_of_the_description_box"
+        android:layout_width="10dp"
+        android:layout_height="65dp"
+        android:background="@color/salmon_red"
+        app:layout_constraintBottom_toBottomOf="@id/description_container"
+        app:layout_constraintRight_toRightOf="@id/description_container"
+        />
+    RSNAPP-237 & RSNAPP-74 test-end
+    -->
+
+
+    <!--
+    Note, for the title TextView, it's important to have the layout_height, set to:
+        android:layout_height="wrap_content"
+    and not to:
+        android:layout_height="match_parent"
+    else a last line, if it happens to contain a single (last) word of title text, may be truncated.
+    For example,
+    with android:layout_height="match_parent",
+    the title of the fist card of team Celtics (http://appstream-stage.nbcsports.com/apps/RSN/feeds/team-view-boston-celtics.json)
+    which reads:
+        "NBC Sports Boston Breakfast Pod"
+    is rendered with the last word "Pod" truncated:
+        "NBC Sports Boston Breakfast"
+    in cases when the "Pod" is to be laid out into a last line.
+    -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="14dp"
+        android:breakStrategy="simple"
+        android:fontFamily="@font/founders_grotesk_app_semibold"
+        android:lineSpacingExtra="-10sp"
+        android:textColor="@color/white"
+        android:textSize="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/marginSpacer"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Allen's tweets are evidence he was recently a teen" />
+
+    <!--
+        Remade 'duration_indicator_layout' and 'duration_indicator_bar',
+        because sometimes the 'duration_indicator_bar' was placed above the 'duration_indicator_layout'
+        (it seems, because 'duration_indicator_bar' used: app:layout_constraintBottom_toBottomOf="parent")
+    -->
+    <LinearLayout
+        android:id="@+id/duration_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/description_container"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <LinearLayout
+            android:id="@+id/duration_indicator_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/duration_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:fontFamily="@font/founders_grotesk_mono_app_regular"
+                android:lineSpacingExtra="5sp"
+                android:text="54:23"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/duration_indicator_bar"
+            android:layout_width="86dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/white" />
+
+    </LinearLayout>
+
+    <include layout="@layout/teamview_card_constraint_guidelines" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

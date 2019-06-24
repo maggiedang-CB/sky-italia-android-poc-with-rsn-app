@@ -1,0 +1,26 @@
+<resources>
+
+    <declare-styleable name="SettingsActionableView">
+        <attr name="actionableText" format="string" />
+        <attr name="actionableTextColor" format="string" />
+        <attr name="actionableTextAlpha" format="float" />
+        <attr name="actionableToggleButtonEnabled" format="boolean"/>
+        <attr name="actionableSubTextEnabled" format="boolean"/>
+        <attr name="functionIcon" format="integer"/>
+        <attr name="actionableUnderLineEnabled" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SettingsHeadingView">
+        <attr name="headingText" format="string" />
+        <attr name="headingTextColor" format="string" />
+        <attr name="headingTextAlpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsDescriptionView" >
+        <attr name="descriptionText" format="string" />
+        <attr name="descriptionColor" format="string" />
+        <attr name="descriptionAlpha" format="float" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:/Users/maggiedang/sky-italia-android-poc-with-rsn-app/app/libs/adobeMobileLibrary-4.16.0.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/adobeMobileLibrary-4.16.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

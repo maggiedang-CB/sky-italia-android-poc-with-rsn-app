@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ssCloseAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:alpha="0.0"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/ssCloseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:alpha="0.0"
+            android:fontFamily="@font/foundersgrotesk_regular"
+            android:text="@string/close"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+
+        <!--Both the RV and SteppedCoverLayout need to listen to touch events.
+        Therefore, it is important to draw the SteppedCoverLayout after RV so when
+        it is showing, the RV won't be able to absorb touch events.-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/steppedRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collapsed_header_state"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <include layout="@layout/collapsed_header_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.nbcsports.regional.nbc_rsn.stepped_story.components.SteppedCoverLayout
+            android:id="@+id/steppedCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/stepped_background_to_fade_to"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+</FrameLayout>

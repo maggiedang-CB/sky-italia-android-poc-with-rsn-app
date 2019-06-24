@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:duration="@integer/fragment_animation_duration"
+        android:fromAlpha="@dimen/fabmenu_anim_invisible"
+        android:interpolator="@anim/custom_interpolator"
+        android:toAlpha="@dimen/fabmenu_anim_visible" />
+    <scale
+        android:duration="@integer/fragment_animation_duration"
+        android:fromXScale="@dimen/fabmenu_anim_scale_min"
+        android:fromYScale="@dimen/fabmenu_anim_scale_min"
+        android:interpolator="@anim/custom_interpolator"
+        android:pivotX="50%p"
+        android:pivotY="50%p"
+        android:toXScale="@dimen/fabmenu_anim_scale_max"
+        android:toYScale="@dimen/fabmenu_anim_scale_max" />
+</set>

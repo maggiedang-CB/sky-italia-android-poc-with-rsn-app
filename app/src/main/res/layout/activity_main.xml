@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.nbcsports.regional.nbc_rsn.MainActivity">
+
+    <com.clearbridge.notification_banner.NotificationBanner
+        android:id="@+id/notification_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.clearbridge.bottom_notification_banner.BottomNotificationBanner
+        android:id="@+id/bottom_notification_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/slide_indicator_background_relative_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rectangle_circle_white_border_no_filled_background"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fab"
+        app:layout_constraintLeft_toLeftOf="@+id/main_guideline_v05"
+        app:layout_constraintRight_toRightOf="@+id/main_guideline_v95"
+        app:layout_constraintTop_toTopOf="@+id/fab" />
+
+    <TextView
+        android:id="@+id/slide_indicator_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/slide_indicator"
+        android:textColor="@color/white65Opacity"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/slide_indicator_background_relative_layout"
+        app:layout_constraintLeft_toRightOf="@+id/fab"
+        app:layout_constraintTop_toTopOf="@+id/slide_indicator_background_relative_layout" />
+
+    <ImageView
+        android:id="@+id/slide_indicator_image_view"
+        android:layout_width="@dimen/slide_indicator_image_view_width"
+        android:layout_height="0dp"
+        android:layout_marginLeft="24dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_slide_indicator"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/slide_indicator_background_relative_layout"
+        app:layout_constraintLeft_toRightOf="@+id/slide_indicator_text_view"
+        app:layout_constraintTop_toTopOf="@+id/slide_indicator_background_relative_layout" />
+
+    <com.nbcsports.regional.nbc_rsn.fabigation.FabMenu
+        android:id="@+id/fab"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:background="@drawable/fab"
+        android:elevation="6dp"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="@dimen/fab_horiz_bias_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="@dimen/fab_vert_bias">
+
+        <ImageView
+            android:id="@+id/fab_logo_animator"
+            android:layout_width="@dimen/fab_logo_max_size"
+            android:layout_height="@dimen/fab_logo_max_size"
+            android:layout_marginStart="@dimen/fab_logo_margin_left"
+            android:layout_marginTop="@dimen/fab_logo_margin_top"
+            android:background="@color/dark_grey" />
+
+        <ImageView
+            android:id="@+id/fab_logo_container"
+            android:layout_width="@dimen/fab_logo_max_size"
+            android:layout_height="@dimen/fab_logo_max_size"
+            android:layout_marginStart="@dimen/fab_logo_margin_left"
+            android:layout_marginTop="@dimen/fab_logo_margin_top"
+            android:background="@color/dark_grey" />
+
+        <ImageView
+            android:id="@+id/fab_logo_af"
+            android:layout_width="@dimen/fab_logo_max_size"
+            android:layout_height="@dimen/fab_logo_max_size"
+            android:layout_marginStart="@dimen/fab_logo_margin_left"
+            android:layout_marginTop="@dimen/fab_logo_margin_top"
+            android:background="@color/dark_grey"
+            android:visibility="invisible" />
+    </com.nbcsports.regional.nbc_rsn.fabigation.FabMenu>
+
+    <com.nbcsports.regional.nbc_rsn.persistentplayer.PersistentPlayerContainer
+        android:id="@+id/persistent_player_mini"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="@dimen/fab_vert_bias"
+        tools:layout="@layout/exo_player_view" />
+
+    <com.nbcsports.regional.nbc_rsn.persistentplayer.PersistentPlayerContainer
+        android:id="@+id/persistent_player_landscape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/exo_player_view" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/main_guideline_v05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/fab_horiz_bias_left" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/main_guideline_v95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/fab_vert_bias" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

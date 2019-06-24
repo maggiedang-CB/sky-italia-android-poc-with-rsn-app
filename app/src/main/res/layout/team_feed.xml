@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/team_view_template_coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.clearbridge.pull_to_refresh.RefreshLayout
+        android:id="@+id/item_list"
+        android:name="com.nbcsports.regional.nbc_rsn.teamviewTemplate.fragments.TeamviewFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_gradient_filter"
+        app:pull_iconHeightPercent="0.15"
+        tools:context="com.nbcsports.regional.nbc_rsn.MainActivity"
+        tools:listitem="@layout/teamview_card_type_video" />
+
+    <LinearLayout
+        android:id="@+id/teamview_page_background_to_fade_to"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/editorial_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+</FrameLayout>

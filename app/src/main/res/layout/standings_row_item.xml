@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white15" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp">
+
+        <ImageView
+            android:id="@+id/standings_row_logo"
+            android:layout_width="@dimen/fab_logo_max_size"
+            android:layout_height="@dimen/fab_logo_max_size"
+            android:src="@drawable/ic_peacock_square"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/standings_row_team_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/logo_flyers" />
+
+        <TextView
+            android:id="@+id/standings_row_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/foundersgrotesk_regular"
+            android:gravity="start|center_vertical"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white50"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/standings_row_playoff_spot"
+            app:layout_constraintStart_toEndOf="@id/standings_row_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="PHI" />
+
+        <TextView
+            android:id="@+id/standings_row_playoff_spot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/foundersgrotesk_bold"
+            android:gravity="start|top"
+            android:text=""
+            android:textAllCaps="false"
+            android:textColor="@color/light_green"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineV50"
+            app:layout_constraintStart_toEndOf="@id/standings_row_team_name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="z" />
+
+        <TextView
+            android:id="@+id/standings_row_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/foundersgroteskmono_regular"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/standings_row_gb"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/guidelineV50"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50-32" />
+
+        <TextView
+            android:id="@+id/standings_row_gb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/foundersgroteskmono_regular"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/standings_row_record"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineV50"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

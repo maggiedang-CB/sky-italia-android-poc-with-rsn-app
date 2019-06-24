@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dropCapLetter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/founders_grotesk_condensed_app_regular"
+        android:gravity="top|end"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        android:paddingEnd="8dp"
+        android:singleLine="true"
+        android:textColor="@color/blue"
+        android:textSize="65sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline7_editorial"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        tools:text="M" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dropCapBodyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:breakStrategy="simple"
+        android:fontFamily="@font/publico_text_roman"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="12sp"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dropCapLetter"
+        app:layout_constraintTop_toTopOf="@id/dropCapLetter"
+        app:layout_constraintVertical_bias="0"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.    https://clearbridgemobile.com    Duis vitae dui ac augue pharetra aliquam consectetur vitae lacus. Pellentesque consectetur lacus elit, non volutpat odio sodales sit amet. Nam at nibh hendrerit, vestibulum nunc nec, elementum dolor. Donec commodo sem turpis, elementum ullamcorper augue finibus nec. Quisque ornare tortor ac nunc ultrices, vel faucibus eros dignissim. Pellentesque vel dictum felis. Vestibulum quis urna bibendum, mattis metus non, cursus metus. In eu dui sit amet quam fermentum volutpat sit amet ut lectus. Sed iaculis, ligula et gravida rhoncus, felis enim hendrerit diam, eu facilisis sapien nisi non nulla. Cras ut tempus purus." />
+    <!--
+    android:linksClickable="true"
+    android:autoLink="web"
+    android:textColorLink="@android:color/holo_blue_dark"
+    -->
+
+    <include layout="@layout/teamview_card_constraint_guidelines" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

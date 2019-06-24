@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="dark_sky_blue">#34a0f1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white10">#1AFFFFFF</color>
+    <color name="white15">#26FFFFFF</color>
+    <color name="white50">#80ffffff</color>
+    <color name="white65">#A6FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black50">#78000000</color>
+    <color name="black15">#27000000</color>
+    <color name="black_shadow">#FA000000</color>
+    <color name="navy_blue">#022E4A</color>
+    <color name="deep_cornflower_blue">#011829</color>
+    <color name="deep_blue">#02253F</color>
+    <color name="red">#AACC0000</color>
+    <color name="salmon_red">#FF5042</color>
+    <color name="dark_grey">#1f1f1f</color>
+    <color name="dark_grey_1">#202020</color>
+    <color name="light_grey">#bfc3c3</color>
+    <color name="light_silver">#c3c3c3</color>
+    <color name="light_grey_1">#e3e3e3</color>
+    <color name="light_grey_2">#8f8f8f</color>
+    <color name="dark_green">#023a37</color>
+    <color name="silver">#818181</color>
+    <color name="silver_grey">#212121</color>
+    <color name="dark_sky_blue_type_2">#1f3d59</color>
+    <color name="white25">#40FFFFFF</color>
+    <color name="grey_2">#3A393A</color>
+    <color name="blue">#1758B7</color>
+    <color name="carousel_default_red">#860033</color>
+    <color name="light_green">#6CDB97</color>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="text_margin">6dp</dimen>
+
+    <!-- Fab Button -->
+    <dimen name="fab_size">80dp</dimen>
+    <dimen name="design_fab_size_mini" tools:override="true">60dp</dimen>
+    <dimen name="design_fab_content_size" tools:override="true">60dp</dimen>
+
+    <dimen name="fab_vert_bias" format="float" type="dimen">0.95</dimen>
+    <dimen name="fab_horiz_bias_left" format="float" type="dimen">0.05</dimen>
+    <dimen name="fab_horiz_bias_right" format="float" type="dimen">0.05</dimen>
+
+    <dimen name="fab_logo_min_size">20dp</dimen>
+    <dimen name="fab_logo_max_size">30dp</dimen>
+    <dimen name="fab_logo_margin_top">28.5dp</dimen>
+    <dimen name="fab_logo_margin_left">25.5dp</dimen>
+
+    <!-- Fab Menu -->
+    <dimen name="menu_card_margin">0dp</dimen>
+
+    <!-- Persistent Player -->
+    <dimen name="persistent_player_timebar_height">6dp</dimen>
+    <dimen name="persistent_player_text_size_medium">17sp</dimen>
+    <dimen name="fab_card_corner_radius">6dp</dimen>
+    <dimen name="persistent_player_icon_size">25dp</dimen>
+
+    <!-- More Teams -->
+    <dimen name="logo_width">35dp</dimen>
+    <dimen name="logo_height">35dp</dimen>
+
+    <!-- Team Selector -->
+    <dimen name="team_icon_size">50dp</dimen>
+
+    <!-- Team View and F1, F2 and Feed Cards -->
+    <dimen name="teamview_card_guideline1" format="float" type="dimen">0.12</dimen>
+    <dimen name="teamview_card_guideline2" format="float" type="dimen">0.117</dimen>
+    <dimen name="teamview_card_guideline3_1" format="float" type="dimen">0.94</dimen>
+    <dimen name="teamview_card_guideline3_2" format="float" type="dimen">0.97</dimen>
+    <dimen name="teamview_card_guideline3_3" format="float" type="dimen">0.85</dimen>
+    <dimen name="teamview_card_f2_title_padding_start">17dp</dimen>
+
+    <!-- Basic Article Template -->
+    <dimen name="app_bar_height">200dp</dimen>
+
+    <!-- Setting -->
+    <dimen name="header_image_height">323dp</dimen>
+
+    <!-- Editorial detail -->
+    <dimen name="editorial_detail_guideline_0_060" format="float" type="dimen">0.060</dimen>
+    <dimen name="exit_button_side_length">35dp</dimen>
+    <dimen name="peacock_logo_height">21dp</dimen>
+    <dimen name="editorial_spacing_media_caption">14dp</dimen>
+
+    <!-- databar -->
+    <dimen name="databar_padding_end">14dp</dimen>
+    <dimen name="databar_padding_start">14dp</dimen>
+    <dimen name="databar_timeout_margin">3dp</dimen>
+    <dimen name="databar_margin_top">10dp</dimen>
+    <dimen name="databar_margin_bottom">10dp</dimen>
+    <!--datamenu-->
+    <dimen name="datamenu_item_horizontal_margin">15dp</dimen>
+    <dimen name="datamenu_item_horizontal_padding">15dp</dimen>
+    <!--spacing between the title (eg. 'East') and the column label-->
+    <dimen name="datamenu_card_title_label_spacing">22dp</dimen>
+    <dimen name="datamenu_card_padding">15dp</dimen>
+    <dimen name="datamenu_card_padding_bottom">8dp</dimen>
+    <dimen name="datamenu_score_text_padding_vertical">11dp</dimen>
+    <dimen name="datamenu_score_column_header_bottom_padding">15dp</dimen>
+    <dimen name="datamenu_score_summary_bottom_margin">30dp</dimen>
+
+    <!--FabMenu Fragment Animation-->
+    <dimen name="fabmenu_anim_invisible" format="float" type="dimen">0</dimen>
+    <dimen name="fabmenu_anim_visible" format="float" type="dimen">1.0</dimen>
+    <dimen name="fabmenu_anim_scale_max" format="float" type="dimen">1.0</dimen>
+    <dimen name="fabmenu_anim_scale_min" format="float" type="dimen">0.625</dimen>
+
+    <!-- Temp Pass -->
+    <dimen name="temp_pass_text_size_1">10sp</dimen>
+    <dimen name="temp_pass_text_size_2">22sp</dimen>
+    <dimen name="temp_pass_text_size_1_land">19sp</dimen>
+
+    <!-- Team Selection Adapter -->
+    <dimen name="team_selection_team_logo_height">35dp</dimen>
+    <dimen name="team_selection_team_logo_width">35dp</dimen>
+
+    <!-- Settings buttons -->
+    <dimen name="settings_exit_button_height">40dp</dimen>
+    <dimen name="settings_exit_button_width">40dp</dimen>
+    <dimen name="settings_back_button_height">40dp</dimen>
+    <dimen name="settings_back_button_width">40dp</dimen>
+    <dimen name="settings_button_padding">10dp</dimen>
+    <dimen name="editorial_detail_hero_margin_top">35dp</dimen>
+
+    <!-- Slide indicator -->
+    <dimen name="slide_indicator_image_view_width">70dp</dimen>
+</resources>

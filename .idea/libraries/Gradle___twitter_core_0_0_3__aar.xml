@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: :twitter-core-0.0.3:@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/30dcd2effba95af3a8744994c29d9139/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/30dcd2effba95af3a8744994c29d9139/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

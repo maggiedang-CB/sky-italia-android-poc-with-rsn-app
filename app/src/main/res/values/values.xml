@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fragment_animation_duration">500</integer>
+    <integer name="mvpd_header_animation_duration">100</integer>
+    <integer name="fragment_animation_duration2">500</integer>
+    <integer name="exit_animation_duration">500</integer>
+    <integer name="splash_screen_check_duration_ms">4000</integer>
+    <bool name="isTablet">false</bool>
+</resources>

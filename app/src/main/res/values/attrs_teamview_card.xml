@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PeacockImageView">
+        <attr name="scaleType" format="enum">
+            <enum name="centerCrop" value="0"/>
+            <enum name="centerInside" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

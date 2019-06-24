@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/team_list_bg_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/gradient_filter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        card_view:layout_constraintBottom_toTopOf="@+id/guideline_h81"
+        card_view:layout_constraintEnd_toStartOf="@+id/guideline_v81"
+        card_view:layout_constraintStart_toStartOf="@+id/guideline_v18"
+        card_view:layout_constraintTop_toTopOf="@+id/guideline_h18">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/color_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <View
+                android:id="@+id/top_line"
+                style="@style/fab_card_line"
+                android:layout_marginTop="4dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/bottom_line"
+                style="@style/fab_card_line"
+                android:layout_marginBottom="4dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/peacock"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:alpha="0.65"
+                android:src="@drawable/peacock"
+                card_view:layout_constraintEnd_toEndOf="@id/top_line"
+                card_view:layout_constraintHorizontal_bias="1"
+                card_view:layout_constraintTop_toBottomOf="@id/top_line" />
+
+            <TextView
+                android:id="@+id/team_app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/founders_grotesk_mono_app_regular"
+                android:text="@string/nbc_regional_sports"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                card_view:layout_constraintBottom_toBottomOf="@id/peacock"
+                card_view:layout_constraintEnd_toStartOf="@drawable/peacock"
+                card_view:layout_constraintStart_toStartOf="@id/top_line"
+                card_view:layout_constraintTop_toBottomOf="@id/top_line"
+                tools:text="NBC REGIONAL SPORTS" />
+
+            <ImageView
+                android:id="@+id/team_logo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="@id/guideline_v70"
+                card_view:layout_constraintStart_toStartOf="@id/guideline_v30"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nbcsn_frank_bold"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="0sp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                card_view:layout_constraintBaseline_toBaselineOf="@+id/team_record"
+                card_view:layout_constraintStart_toStartOf="@id/bottom_line"
+                tools:text="TEAM NAME" />
+
+            <TextView
+                android:id="@+id/team_season"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/founders_grotesk_mono_app_regular"
+                android:gravity="end"
+                android:lineSpacingExtra="0sp"
+                android:rotation="90"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="invisible"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                tools:text="Season" />
+
+            <TextView
+                android:id="@+id/team_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:lineSpacingExtra="0sp"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="invisible"
+                card_view:layout_constraintBottom_toTopOf="@id/bottom_line"
+                card_view:layout_constraintEnd_toEndOf="@id/bottom_line"
+                tools:text="Record" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_v70"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                card_view:layout_constraintGuide_percent="0.7" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_v30"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                card_view:layout_constraintGuide_percent="0.3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        card_view:layout_constraintGuide_percent="0.1875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v81"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        card_view:layout_constraintGuide_percent="0.8125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        card_view:layout_constraintGuide_percent="0.1875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h81"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        card_view:layout_constraintGuide_percent="0.8125" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- "A treatment using team primary color background" (set programmatically). -->
+    <item android:id="@+id/coloredDrawable">
+        <shape android:shape="rectangle">
+            <!--<solid android:color="#000000" />-->
+        </shape>
+    </item>
+
+    <!-- "Primary color fill with 10% opacity #000 on top" (10% Opacity = 1A Hex opacity value) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1A000000" />
+        </shape>
+    </item>
+
+    <!-- "White peacock 15px padding upper right hand corner" -->
+    <!-- Its width:height is to be 16:9 -->
+   <!-- <item
+        android:gravity="center"
+
+        android:width="40dp"
+        android:height="22.5dp"
+
+        android:left="395dp"
+        android:right="140dp"
+        android:top="15dp"
+        android:bottom="150dp"
+        >
+        <bitmap
+            android:src="@drawable/peacock" />
+    </item>-->
+
+</layer-list>

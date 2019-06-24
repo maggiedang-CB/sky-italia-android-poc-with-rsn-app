@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_more_team_container"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/settings_text_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.65"
+        android:background="@color/deep_cornflower_blue"
+        app:layout_constraintStart_toStartOf="@id/guideline_v04"
+        app:layout_constraintEnd_toStartOf="@id/settings_arrow_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setting_view_more_team_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v08"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:lineSpacingExtra="14sp"
+        />
+
+    <!--Included An extra section for icon, due to different background color, for further detail please see Sprint 4 document page 35-->
+    <View
+        android:id="@+id/settings_arrow_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v96"
+        />
+
+    <ImageView
+        android:id="@+id/setting_view_more_team_icon"
+        android:layout_width="9dp"
+        android:layout_height="15dp"
+        android:src="@drawable/view_more"
+        app:layout_constraintBottom_toBottomOf="@id/settings_arrow_background"
+        app:layout_constraintEnd_toEndOf="@id/settings_arrow_background"
+        app:layout_constraintStart_toStartOf="@id/settings_arrow_background"
+        app:layout_constraintTop_toTopOf="@id/settings_arrow_background" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v96"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

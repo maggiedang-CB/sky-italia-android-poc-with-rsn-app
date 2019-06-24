@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/collapsed_header_state"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:visibility="invisible"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/fragment_stepped_story"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/collapsed_hero_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/foundersgrotesk_regular"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/share_button_in_collapsed_header"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:padding="7dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_share_black" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/collapsed_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/light_grey" />
+
+</FrameLayout>

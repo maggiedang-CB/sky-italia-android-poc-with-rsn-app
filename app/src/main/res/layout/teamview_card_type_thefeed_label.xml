@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/thefeed_label_container"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/black"
+    >
+
+    <View
+        android:id="@+id/topSeparatorLine"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v3_2"
+        />
+
+    <TextView
+        android:id="@+id/thefeed_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="-8sp"
+        android:textColor="@color/white"
+        android:textSize="46sp"
+        android:fontFamily="@font/publico_headline_black"
+        android:text="@string/thefeed_label"
+        app:layout_constraintTop_toBottomOf="@id/topSeparatorLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        />
+        <!--android:letterSpacing="0.03"   ???-->
+
+    <TextView
+        android:id="@+id/thefeed_label_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:fontFamily="@font/founders_grotesk_mono_app_regular"
+        android:lineSpacingExtra="-3sp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text=""
+        tools:text="OCT 24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v3"
+        />
+
+    <include layout="@layout/teamview_card_constraint_guidelines"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

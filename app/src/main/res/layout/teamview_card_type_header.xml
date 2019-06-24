@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/header_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        >
+        <View
+            android:id="@+id/header_flag_top_color"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#002d62"
+        />
+
+        <View
+            android:id="@+id/header_flag_bottom_color"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#e51837"
+        />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/header_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="14sp"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:fontFamily="@font/nbcsn_frank_bold"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        tools:text="EAGLES"
+    />
+
+    <ImageView
+        android:id="@+id/header_peacock"
+        android:layout_width="38dp"
+        android:layout_height="22dp"
+        android:contentDescription="peacock"
+        android:src="@drawable/peacock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v3_2"
+    />
+
+    <include layout="@layout/teamview_card_constraint_guidelines"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

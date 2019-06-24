@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/dark_grey_1"
+    android:textColor="@color/white"
+    android:textSize="14sp"
+    android:fontFamily="@font/founders_grotesk_mono_app_regular"
+    android:textAllCaps="true"
+    android:gravity="center|end"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    tools:text="REGULAR"
+    android:ellipsize="marquee"/>

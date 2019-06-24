@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/more_team_cardview"
+    style="@style/fab_card"
+    card_view:cardBackgroundColor="@color/deep_blue">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/more_team_bg_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:background="@color/deep_blue"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <View
+                android:id="@+id/top_line"
+                style="@style/fab_card_line"
+                android:layout_marginTop="4dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.2" />
+
+            <View
+                android:id="@+id/bottom_line"
+                style="@style/fab_card_line"
+                android:layout_marginBottom="4dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/peacock"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:alpha="0.5"
+                android:src="@drawable/peacock"
+                card_view:layout_constraintEnd_toEndOf="@id/top_line"
+                card_view:layout_constraintHorizontal_bias="1"
+                card_view:layout_constraintTop_toBottomOf="@id/top_line" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/founders_grotesk_mono_app_regular"
+                android:text="@string/nbc_regional_sports"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                card_view:layout_constraintBottom_toBottomOf="@id/peacock"
+                card_view:layout_constraintEnd_toStartOf="@drawable/peacock"
+                card_view:layout_constraintStart_toStartOf="@id/top_line"
+                card_view:layout_constraintTop_toBottomOf="@id/top_line" />
+
+            <ImageView
+                android:id="@+id/team_selector_logo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/peacock"
+                android:tint="@color/black"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintDimensionRatio="H, 3:4"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/more_teams_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/publico_headline_black"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="0sp"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                card_view:layout_constraintBottom_toTopOf="@id/bottom_line"
+                card_view:layout_constraintStart_toStartOf="@id/bottom_line" />
+
+            <TextView
+                android:id="@+id/team_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/founders_grotesk_mono_app_regular"
+                android:lineSpacingExtra="0sp"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                card_view:layout_constraintBottom_toTopOf="@id/bottom_line"
+                card_view:layout_constraintEnd_toEndOf="@id/bottom_line" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

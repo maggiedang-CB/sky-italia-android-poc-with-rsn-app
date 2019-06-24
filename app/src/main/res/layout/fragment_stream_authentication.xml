@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_stream_authentication"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/authentication_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/above_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/above_provider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/exit_button_side_length"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="10dp">
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/peacock_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/peacock_logo_height"
+                        android:layout_marginBottom="40dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/white" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/description_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:alpha="0.35"
+                            android:background="@color/white"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/instructions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:fontFamily="@font/foundersgrotesk_regular"
+                            android:lineSpacingExtra="5dp"
+                            android:minHeight="50dp"
+                            android:text="@string/cable_provider_instruction"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationHeadingView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headingText="@string/authentication_logo_heading"
+                        app:headingTextAlpha="0.65"
+                        app:headingTextColor="@color/white">
+
+                    </com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationHeadingView>
+
+                    <com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationGridView
+                        android:id="@+id/provider_logo_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/silver_grey"
+                        android:gravity="center"
+                        android:horizontalSpacing="2dp"
+                        android:numColumns="3"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="2dp">
+
+                    </com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationGridView>
+                </LinearLayout>
+
+                <com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationHeadingView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:headingText="@string/authentication_all_calble_provider"
+                    app:headingTextAlpha="0.65"
+                    app:headingTextColor="@color/white">
+
+                </com.nbcsports.regional.nbc_rsn.authentication.authentication_views.AuthenticationHeadingView>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stream_company_search_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginBottom="30dp"
+                android:background="@color/black"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp">
+
+                <EditText
+                    android:id="@+id/provider_search_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="13dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/founders_grotesk_app_regular"
+                    android:hint="@string/authentication_search"
+                    android:inputType="text"
+                    android:lineSpacingExtra="4sp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/silver"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/setup_information_indicator"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="13dp"
+                    android:alpha="0.2"
+                    android:background="@color/white"
+                    android:labelFor="@id/provider_search_field"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/provider_search_field" />
+
+                <ImageView
+                    android:id="@+id/search_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/search"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/setup_information_indicator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/provider_search_field"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.50" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/provider_name_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/loading_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:gravity="center"
+        android:visibility="gone"
+        android:focusable="true"
+        android:clickable="true"
+        tools:visibility="visible"
+        >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/exit_button"
+        android:layout_width="@dimen/exit_button_side_length"
+        android:layout_height="@dimen/exit_button_side_length"
+        android:layout_gravity="right"
+        android:padding="15dp"
+        android:scaleType="center"
+        android:src="@drawable/black"
+        />
+
+</FrameLayout>
+

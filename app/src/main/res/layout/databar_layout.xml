@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:elevation="1dp">
+
+    <RelativeLayout
+        android:id="@+id/databar_root_background_layer_relative_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:alpha="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v60"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v40"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/mlb_runners_on_base"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/mlb_based_empty"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/databar_margin_top"
+        android:layout_marginBottom="@dimen/databar_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v60"
+        app:layout_constraintStart_toStartOf="@id/guideline_v40"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/databar_top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/databar_padding_end"
+        android:layout_marginStart="@dimen/databar_padding_start"
+        android:layout_marginTop="@dimen/databar_margin_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_goneMarginTop="@dimen/databar_margin_top">
+
+        <!-- placeholder text to maintain topbar size in collapsed state -->
+        <TextView
+            style="@style/databar_score"
+            android:text="NBC"
+            android:textColor="#00FFFFFF"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/flex_guideline_v32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/flex_guideline_v68"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <TextView
+            android:id="@+id/databar_city_name_team_away"
+            style="@style/databar_top_text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="LAL" />
+
+        <TextView
+            android:id="@+id/databar_game_segment"
+            style="@style/databar_top_text_style"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/flex_guideline_v32"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="6TH" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/databar_flex"
+            style="@style/databar_top_text_style"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/flex_guideline_v32"
+            app:layout_constraintEnd_toEndOf="@id/flex_guideline_v68"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Los Angeles, NBC" />
+
+        <TextView
+            android:id="@+id/databar_detail"
+            style="@style/databar_top_text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/flex_guideline_v68"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0 OUTS" />
+
+        <TextView
+            android:id="@+id/databar_city_name_team_home"
+            style="@style/databar_top_text_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BOS" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/databar_possession_indicator_team_away"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingEnd="4.5dp"
+        android:paddingStart="0dp"
+        android:src="@drawable/ic_black_triangle_right"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/databar_middle_bar"
+        app:layout_constraintEnd_toStartOf="@id/databar_middle_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/databar_middle_bar" />
+
+    <View
+        android:id="@+id/databar_top_padding"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/databar_margin_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/databar_middle_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/databar_padding_end"
+        android:layout_marginStart="@dimen/databar_padding_start"
+        app:layout_constraintTop_toBottomOf="@+id/databar_top_padding"
+        app:layout_constraintBottom_toTopOf="@+id/databar_bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/databar_logo_team_away"
+            style="@style/databar_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center_vertical|start"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/logo_flyers" />
+
+        <TextView
+            android:id="@+id/databar_score_team_away"
+            style="@style/databar_score"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/databar_logo_team_away"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="77" />
+
+        <TextView
+            android:id="@+id/databar_game_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:fontFamily="@font/foundersgroteskmono_regular"
+            android:gravity="center"
+            android:lineSpacingExtra="0sp"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="TODAY 7:07PM" />
+
+        <TextView
+            android:id="@+id/databar_score_team_home"
+            style="@style/databar_score"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/databar_logo_team_home"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="86" />
+
+        <ImageView
+            android:id="@+id/databar_logo_team_home"
+            style="@style/databar_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center_vertical|end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/logo_flyers" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/databar_possession_indicator_team_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingEnd="0dp"
+        android:paddingStart="4.5dp"
+        android:src="@drawable/ic_black_triangle_left"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/databar_middle_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/databar_middle_bar"
+        app:layout_constraintTop_toTopOf="@id/databar_middle_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/databar_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/databar_padding_end"
+        android:layout_marginStart="@dimen/databar_padding_start"
+        app:layout_constraintTop_toBottomOf="@id/databar_middle_bar"
+        app:layout_constraintBottom_toTopOf="@id/databar_bottom_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Away Timeout -->
+        <ImageView
+            android:id="@+id/away_timeout_1"
+            style="@style/databar_away_timeout"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/away_timeout_2"
+            style="@style/databar_away_timeout"
+            app:layout_constraintStart_toEndOf="@id/away_timeout_1" />
+
+        <ImageView
+            android:id="@+id/away_timeout_3"
+            style="@style/databar_away_timeout"
+            app:layout_constraintStart_toEndOf="@id/away_timeout_2" />
+
+        <!-- Home Timeout -->
+        <ImageView
+            android:id="@+id/home_timeout_1"
+            style="@style/databar_home_timeout"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/home_timeout_2"
+            style="@style/databar_home_timeout"
+            app:layout_constraintEnd_toStartOf="@id/home_timeout_1" />
+
+        <ImageView
+            android:id="@+id/home_timeout_3"
+            style="@style/databar_home_timeout"
+            app:layout_constraintEnd_toStartOf="@id/home_timeout_2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/databar_bottom_padding"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/databar_bottom_bar"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

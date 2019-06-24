@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2.5dp"
+    android:layout_marginBottom="2.5dp"
+    android:background="@color/deep_blue"
+    android:paddingStart="@dimen/datamenu_card_padding"
+    android:paddingTop="@dimen/datamenu_card_padding"
+    android:paddingEnd="@dimen/datamenu_card_padding"
+    android:paddingBottom="@dimen/datamenu_card_padding_bottom">
+
+    <TextView
+        android:id="@+id/standing_card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/foundersgrotesk_regular"
+        android:lineSpacingExtra="6sp"
+        android:paddingBottom="@dimen/datamenu_card_title_label_spacing"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="East" />
+
+    <TextView
+        android:id="@+id/standing_label_record"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/foundersgroteskmono_regular"
+        android:gravity="start"
+        android:lineSpacingExtra="-3sp"
+        android:text="@string/rec"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/standings_card_list"
+        app:layout_constraintEnd_toStartOf="@id/standings_label_gb"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/guidelineV50"
+        app:layout_constraintTop_toBottomOf="@id/standing_card_title"
+        tools:text="REC" />
+
+    <TextView
+        android:id="@+id/standings_label_gb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/foundersgroteskmono_regular"
+        android:gravity="end"
+        android:lineSpacingExtra="-3sp"
+        android:text="@string/gb"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/standing_label_record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/standing_label_record"
+        app:layout_constraintTop_toTopOf="@id/standing_label_record"
+        tools:text="GB" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/standings_card_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/standing_label_record"
+        tools:itemCount="5"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/standings_row_item"
+        tools:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV50"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

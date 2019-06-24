@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/actionable_container"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/actionable_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/founders_grotesk_app_regular"
+        android:lineSpacingExtra="4sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_h78"
+        app:layout_constraintStart_toStartOf="@id/guideline_v04"
+        />
+
+    <TextView
+        android:id="@+id/actionable_sub_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/founders_grotesk_app_regular"
+        android:lineSpacingExtra="4sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="5dp"
+        android:textSize="12sp"
+        android:alpha="0.65"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_h78"
+        app:layout_constraintStart_toEndOf="@id/actionable_description"
+        />
+
+    <View
+        android:id="@+id/setting_actionable_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:alpha="0.2"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@id/guideline_v04"
+        app:layout_constraintEnd_toEndOf="@id/guideline_v96"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/icon_container"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/setting_actionable_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69">
+
+        <ImageView
+            android:id="@+id/function_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:scaleType="center" />
+
+    </LinearLayout>
+
+    <com.nbcsports.regional.nbc_rsn.settings.settings_views.SettingsToggleButton
+        android:id="@+id/toggle_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/guideline_v96"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_h89"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v96"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

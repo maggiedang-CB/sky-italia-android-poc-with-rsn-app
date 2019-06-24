@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/datamenu_score_text_padding_vertical"
+    android:paddingBottom="@dimen/datamenu_score_text_padding_vertical"
+    android:paddingStart="12dp"
+    android:textAppearance="@style/DataMenuScoreStats"
+    android:background="@android:color/transparent"
+    android:textAlignment="textEnd"
+    tools:text="2.0" />
