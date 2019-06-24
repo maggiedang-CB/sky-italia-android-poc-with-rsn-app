@@ -1,6 +1,8 @@
 # sky-italia-android-poc-with-rsn-app
 Sky Italia IMA POC for android using existing code from RSN app (https://github.com/NBC-Sports-Group/rsn-mobile-app-android)
 
+>> To change ad tag for testing, go to file "imaAds.java" and change value of String variable "adTag" to the URL of the ad's VAST XML.
+
 Currently It is able to:
 - Play pre-roll on medium.
 - Play pre-roll on landscape (Only if video is only played as landscape i.e Live Assets).
